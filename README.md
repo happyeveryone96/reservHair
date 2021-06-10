@@ -13,13 +13,13 @@
       - 날짜 선택 (moment.js / TOAST UI)<br>
       
      > 리뷰 (Ajax GET & POST)
-     > 
+      
      > 소개 (BootStrap collapse)
-     > 
+      
      > Jinja2를 이용하여 로그인 후 본인의 아이디가 상단에 배치되도록 함(SSR),
-     > 
+     
      > 성별에 따른 사진 필터링(세션),
-     > 
+     
      > 로그인, 로그아웃, 회원가입(쿠키, JWT, Ajax POST)
 
 - 팀원구성
