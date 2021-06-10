@@ -11,16 +11,16 @@
       - 헤어 이미지 (slick slider)<br>
       - 토글 버튼 (BootStrap collapse)<br>
       - 날짜 선택 (moment.js / TOAST UI)<br>
-     > 
+      
      > 리뷰 페이지(Ajax GET & POST) <br>
       - 좋아요 기능 및 내림차순 정렬
-     > 
+      
      > 소개 페이지(BootStrap collapse)
-     > 
+      
      > Jinja2를 이용하여 로그인 후 본인의 아이디가 상단에 배치되도록 함(SSR),
-     >
+     
      > 성별에 따른 사진 필터링(세션),
-     >
+     
      > 로그인, 로그아웃, 회원가입(쿠키, JWT, Ajax POST)
 
 - 팀원구성
@@ -28,9 +28,9 @@
      
 - 기술 스택
     > HTML, CSS, JavaScript, JQuery
-    > 
+     
     > Python, Flask
-    > 
+     
     > MongoDB
-    > 
+    
     > AWS EC2
