@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Dancing+Script&family=Quicksand:wght@300;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        font-family: 'Jua', sans-serif;
+    }
+    .item-desc {
+        text-align: left;
+        margin-left: 20px;
+        font-size: 30px;
+        margin-bottom: 20px;
+
+    }
+
+    .table {
+        margin-top: 50px;
+        text-align: left;
+    }
+
+    .wrap {
+        margin: auto;
+        width: 1000px;
+        text-align: center;
+    }
+
+    .mb-3 {
+        width: 250px;
+        text-align: left;
+    }
+
+    .review-InputBox {
+        width: 600px;
+        margin-right: 20px;
+    }
+
+    .liketoo {
+        margin-left: 60px;
+    }
+
+    .submit-button {
+
+        text-align: right;
+    }
+
+    img {
+
+        text-align: center;
+    }
+
+    .logo {
+        width: 250px;
+        height: 250px;
+        display: flex;
+        text-align: center;
+        margin: auto;
+
+    }
+
+
+    .buttonBox {
+
+        justify-content: center;
+        width: 120px;
+        height: 40px;
+        margin: auto;
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        border: none;
+        margin-bottom: 30px;
+
+    }
+
+    .buttonBoxRight {
+        text-align: right;
+        border-bottom: 1px solid black;
+        margin-bottom: 50px;
+    }
+
+    .menu {
+        color: black;
+    }
+
+    .logout-right {
+        text-align: right;
+
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+
+</style>
+<script>
+    $(document).ready(function () {
+        listing();
+    });
+
+    function listing() {
+        $.ajax({
+            type: "GET",
+            url: "/review",
+            data: {},
+            success: function (response) {
+                if (response["result"] == "success") {
+                    let review = response['review'];
+                    for (let i = 0; i < review.length; i++) {
+                        let hairStyle = review[i]['hairStyle'];
+                        let content = review[i]['content'];
+                        let like = review[i]['like']
+
+                        let temp_html = `<tr>
+                                                <th scope="col" >${hairStyle}</th>
+                                                <th scope="col">${content}</th>
+                                                <th><button id="like-box"class="button is-danger is-inverted" onclick="likeReview('${content}')">\t&#10084;${like}</button></th>
+                                          </tr>`
+                        $('#review-box').append(temp_html)
+                    }
+                }
+            }
+        })
+    }
+
+    function review() {
+        let hairStyle = $('#formGroupExampleInput').val();
+        let content = $('#formGroupExampleInput2').val();
+
+        $.ajax({
+            type: "POST",
+            url: "/review",
+            data: {hairStyle_give: hairStyle, content_give: content},
+            success: function (response) {
+                if (response["result"] == "success") {
+                    alert(response["msg"]);
+                    window.location.reload();
+                }
+            }
+        })
+    }
+
+    function likeReview(content) {
+        $.ajax({
+            type: "POST",
+            url: "/api/like",
+            data: {content_give: content},
+            success: function (response) {
+
+                window.location.reload()
+            }
+        });
+    }
+
+    function sign_out() {
+        $.removeCookie('mytoken', {path: '/'});
+        alert('로그아웃!')
+        window.location.href = "/login"
+    }
+
+</script>
+
+
+<body>
+<div class="wrap">
+    <p class="subtitle">안녕하세요, ' {{ username }} '님!</p>
+    <div class="logout-right">
+        <button onclick="sign_out()" class="button is-ghost">로그아웃</button>
+    </div>
+
+
+    <div id="main">
+
+        <div class="logo">
+            <img align=center src="../static/logo.jpg" alt="">
+
+        </div>
+
+        <div class="button-margin">
+            <div class="buttonBoxRight">
+                <button class="buttonBox" onclick='window.location.href = "/"'>
+                    <strong class="menu">예약</strong>
+                </button>
+                <button class="buttonBox" onclick='window.location.href = "/Review"'>
+                    <strong class="menu">리뷰</strong>
+                </button>
+                <button class="buttonBox" onclick='window.location.href = "/Info"'>
+                    <strong class="menu">소개</strong>
+                </button>
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class="item-desc">
+                <h1>리뷰를 작성해주세요!!</h1>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label"></label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="스타일">
+            </div>
+
+            <div class="mb-4">
+                <label for="formGroupExampleInput2" class="form-label"></label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="리뷰 내용">
+            </div>
+
+
+            <div class="style-order">
+
+                <!--        <div class="input-group mb-3">-->
+                <!--            <div class="input-group-prepend">-->
+                <!--                <span class="input-group-text">스타일</span>-->
+                <!--            </div>-->
+                <!--            <input id="style-order" type="text" class="style-InputBox" aria-label="Default"-->
+                <!--                   aria-describedby="inputGroup-sizing-default">-->
+                <!--        </div>-->
+
+                <div class="submit-button">
+                    <!--            <div class="input-group-prepend">-->
+                    <!--                <span class="input-group-text">리뷰 내용</span>-->
+
+                    <!--            </div>-->
+
+                    <!--            <input id="review-content" type="text" class="review-InputBox" aria-label="Default"-->
+                    <!--                   aria-describedby="inputGroup-sizing-default">-->
+                    <button align="right" type="button" onclick="review()" class="btn btn-primary btn-order">게시하기
+                    </button>
+                </div>
+
+
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col" width="200px">스타일</th>
+                    <th scope="col" width="600px">리뷰 내용</th>
+                    <th scope="col" width="100px" class="liketoo">&nbsp;&nbsp;&nbsp;공감</th>
+                </tr>
+                </thead>
+                <tbody id="review-box">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
