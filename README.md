@@ -12,9 +12,10 @@
       - 토글 버튼 (BootStrap collapse)<br>
       - 날짜 선택 (moment.js / TOAST UI)<br>
       
-     > 리뷰 (Ajax GET & POST)
+     > 리뷰 페이지(Ajax GET & POST) <br>
+      - 좋아요 기능 및 내림차순 정렬
       
-     > 소개 (BootStrap collapse)
+     > 소개 페이지(BootStrap collapse)
       
      > Jinja2를 이용하여 로그인 후 본인의 아이디가 상단에 배치되도록 함(SSR),
      
