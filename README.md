@@ -5,9 +5,9 @@
      > 가상의 미용실 예약 및 리뷰 서비스
 
 - 상세 기능 
-     > 예약 (slick slider / moment.js / TOAST UI / BootStrap collapse / Ajax GET&POST)
+     > 예약 (slick slider / moment.js / TOAST UI / BootStrap collapse / Ajax GET & POST)
      > 
-     > 리뷰 (Ajax GET&POST)
+     > 리뷰 (Ajax GET & POST)
      > 
      > 소개 (BootStrap collapse)
      > 
@@ -15,7 +15,7 @@
      > 
      > 성별에 따른 사진 필터링(세션),
      > 
-     > 로그인, 로그아웃, 회원가입(쿠키, JWT, Ajax GET&POST)
+     > 로그인, 로그아웃, 회원가입(쿠키, JWT, Ajax GET & POST)
 
 - 팀원구성
     > 변호연, 신승훈, 성찬우, 정진우
