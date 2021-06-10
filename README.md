@@ -4,7 +4,9 @@
 
 - 상세 기능 
      > 예약 (slick slider / moment.js / TOAST UI / BootStrap collapse / Ajax GET,POST)
+     > 
      > 리뷰 (Ajax GET,POST)
+     > 
      > 소개 (BootStrap collapse)
      > Jinja2를 이용하여 로그인 후 본인의 아이디가 상단에 배치되도록 함(SSR),
      > 성별에 따른 사진 필터링(세션),
