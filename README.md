@@ -9,7 +9,7 @@
 - 상세 기능 
      > 예약 페이지 (Ajax GET & POST) <br>
       - 헤어 이미지 (slick slider)<br>
-      - 성별에 따른 사진 필터링(세션)<br>
+      - 성별에 따른 사진 필터링 (세션)<br>
       - 토글 버튼 (BootStrap collapse)<br>
       - 날짜 선택 (moment.js / TOAST UI)<br>
       
