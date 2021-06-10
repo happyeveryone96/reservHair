@@ -7,10 +7,10 @@
      > 가상의 미용실 예약 및 리뷰 서비스
 
 - 상세 기능 
-     > 예약 페이지 (Ajax GET & POST)
-      - 헤어 이미지 (slick slider)
-      - 토글 버튼 (BootStrap collapse)
-      - 날짜 선택 (moment.js / TOAST UI)
+     > 예약 페이지 (Ajax GET & POST) <br>
+      - 헤어 이미지 (slick slider)<br>
+      - 토글 버튼 (BootStrap collapse)<br>
+      - 날짜 선택 (moment.js / TOAST UI)<br>
       
      > 리뷰 (Ajax GET & POST)
      > 
