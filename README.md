@@ -20,6 +20,9 @@
      
 - 기술 스택
     > HTML, CSS, JavaScript, JQuery
+    > 
     > Python, Flask
+    > 
     > MongoDB
+    > 
     > AWS EC2
