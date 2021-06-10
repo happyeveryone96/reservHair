@@ -1,6 +1,8 @@
-- 프로젝트 이름 : 예약 HAIR
+- 프로젝트 이름
+     > 예약 HAIR
 
-- 프로젝트 설명 : 가상의 미용실 예약 및 리뷰 서비스
+- 프로젝트 설명
+     > 가상의 미용실 예약 및 리뷰 서비스
 
 - 상세 기능 
      > 예약 (slick slider / moment.js / TOAST UI / BootStrap collapse / Ajax GET&POST)
