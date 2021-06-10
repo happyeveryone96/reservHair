@@ -55,7 +55,7 @@ def sign_in():
             'exp': datetime.utcnow() + timedelta(seconds=60 * 60 * 24)  # 로그인 24시간 유지
         }
 
-        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
         return jsonify({'result': 'success', 'token': token, 'user_id': result['username'], 'gender': result['gender']})
     # 찾지 못하면
@@ -87,7 +87,6 @@ def check_dup():
 
 
 
-
 # 리뷰
 ## HTML 화면 보여주기
 @app.route('/Review')
@@ -104,21 +103,18 @@ def MyhairShop():
         return redirect(url_for("login"))
 
 
-
 @app.route('/review', methods=['POST'])
 def save_order():
-    hairStyle_receive = request.form['hairStyle_give']
+    hairstyle_receive = request.form['hairStyle_give']
     content_receive = request.form['content_give']
-
     doc = {
-        'hairStyle': hairStyle_receive,
+        'hairStyle': hairstyle_receive,
         'content': content_receive,
         'like': 0
     }
     db.revHair.insert_one(doc)
 
     return jsonify({'result': 'success', 'msg': '작성 완료!'})
-
 
 
 @app.route('/review', methods=['GET'])
