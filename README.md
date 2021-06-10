@@ -9,6 +9,7 @@
 - 상세 기능 
      > 예약 페이지 (Ajax GET & POST) <br>
       - 헤어 이미지 (slick slider)<br>
+      - 성별에 따른 사진 필터링(세션)<br>
       - 토글 버튼 (BootStrap collapse)<br>
       - 날짜 선택 (moment.js / TOAST UI)<br>
       
@@ -17,9 +18,7 @@
       
      > 소개 페이지 (BootStrap collapse)
       
-     > Jinja2를 이용하여 로그인 후 본인의 아이디가 상단에 배치되도록 함(SSR),
-     
-     > 성별에 따른 사진 필터링(세션),
+     > Jinja2를 이용하여 로그인 후 본인의 아이디가 상단에 렌더링되도록 함(SSR),
      
      > 로그인, 로그아웃, 회원가입 (쿠키, JWT, Ajax POST)
 
