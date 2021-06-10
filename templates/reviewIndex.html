@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Dancing+Script&family=Quicksand:wght@300;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Dancing+Script&family=Quicksand:wght@300;400&family=Roboto:wght@100&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -22,9 +23,10 @@
     <title>Title</title>
 </head>
 <style>
-    *{
+    * {
         font-family: 'Jua', sans-serif;
     }
+
     .item-desc {
         text-align: left;
         margin-left: 20px;
@@ -167,10 +169,11 @@
             url: "/api/like",
             data: {content_give: content},
             success: function (response) {
-
-                window.location.reload()
+                if (response["result"] == "success") {
+                    window.location.reload()
+                }
             }
-        });
+        })
     }
 
     function sign_out() {
@@ -191,10 +194,8 @@
 
 
     <div id="main">
-
         <div class="logo">
             <img align=center src="../static/logo.jpg" alt="">
-
         </div>
 
         <div class="button-margin">
@@ -218,7 +219,6 @@
                 <h1>리뷰를 작성해주세요!!</h1>
             </div>
 
-
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label"></label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="스타일">
@@ -231,27 +231,10 @@
 
 
             <div class="style-order">
-
-                <!--        <div class="input-group mb-3">-->
-                <!--            <div class="input-group-prepend">-->
-                <!--                <span class="input-group-text">스타일</span>-->
-                <!--            </div>-->
-                <!--            <input id="style-order" type="text" class="style-InputBox" aria-label="Default"-->
-                <!--                   aria-describedby="inputGroup-sizing-default">-->
-                <!--        </div>-->
-
                 <div class="submit-button">
-                    <!--            <div class="input-group-prepend">-->
-                    <!--                <span class="input-group-text">리뷰 내용</span>-->
-
-                    <!--            </div>-->
-
-                    <!--            <input id="review-content" type="text" class="review-InputBox" aria-label="Default"-->
-                    <!--                   aria-describedby="inputGroup-sizing-default">-->
                     <button align="right" type="button" onclick="review()" class="btn btn-primary btn-order">게시하기
                     </button>
                 </div>
-
 
             </div>
             <table class="table">
@@ -271,20 +254,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
