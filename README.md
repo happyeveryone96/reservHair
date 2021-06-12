@@ -34,5 +34,5 @@
     
     > AWS EC2
 
-- 데모 영상
-   > <a href="https://www.youtube.com/watch?v=86_Z142PMTo"></a
+
+<a href="https://www.youtube.com/watch?v=86_Z142PMTo">데모영상 보러가기</a>
